@@ -1,0 +1,44 @@
+.allBlogsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(233, 217, 191);
+    width: 100vw;
+
+}
+
+.topTextContainer {
+    display: flex;
+    margin: 10px;
+    margin: 2rem;
+    margin-top: 5rem;
+}
+
+.topTextContainer button {
+    margin-left: 2rem;
+    background-color: #51d392;
+}
+
+.allBlogs {
+    margin-left: 2rem;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 2rem;
+    width: 85%;
+}
+
+.blogCard {
+    height: auto;
+    width: auto;
+    background-color: rgb(240, 114, 114);
+    padding: 20px;
+    cursor: pointer;
+}
+
+.blogCard p {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
