@@ -20,14 +20,14 @@ function RegisterForm() {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        if (!data.name|| !data.email || !data.password) {
+        if (!data.name || !data.email || !data.password) {
             alert("Please fill in all fields.");
             return;
         }
 
         // Send the POST request
         try {
-            const response = await fetch("http://http://3.111.7.227/api/v1/auth/register", {
+            const response = await fetch("http://3.111.7.227/api/v1/auth/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -65,11 +65,6 @@ function RegisterForm() {
                 <div className={styles.input}>
                     <img alt="message_img" />
                     <input name="email" value={data.email} onChange={handleChange} type="email" placeholder='Email' required />
-                </div>
-
-                <div className={styles.input}>
-                    <img id={styles.mobil} alt="mobile_img" />
-                    <input name="mobile" value={data.mobile} onChange={handleChange} type="number" placeholder='Mobile' required />
                 </div>
 
                 <div className={styles.input}>
