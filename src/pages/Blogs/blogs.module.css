@@ -18,6 +18,7 @@
 .topTextContainer button {
     margin-left: 2rem;
     background-color: #51d392;
+    padding: 10px;
 }
 
 .allBlogs {
