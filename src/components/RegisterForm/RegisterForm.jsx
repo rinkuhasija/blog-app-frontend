@@ -3,6 +3,9 @@ import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router'
 import AuthContext from "../../context/login/authContext"
 import styles from "./registerForm.module.css"
+import lock from "../../assets/lock_img.png"
+import email from "../../assets/email_img.png"
+import user from "../../assets/user.png"
 
 function RegisterForm() {
 
@@ -58,17 +61,17 @@ function RegisterForm() {
             <form >
 
                 <div className={styles.input}>
-                    <img alt="user_icon" />
+                    <img src={user} alt="user_icon" />
                     <input name="name" value={data.name} onChange={handleChange} type="text" placeholder='Name' required />
                 </div>
 
                 <div className={styles.input}>
-                    <img alt="message_img" />
+                    <img src={email} alt="message_img" />
                     <input name="email" value={data.email} onChange={handleChange} type="email" placeholder='Email' required />
                 </div>
 
                 <div className={styles.input}>
-                    <img alt="lock_img" />
+                    <img src={lock} alt="lock_img" />
                     <input name="password" value={data.password} onChange={handleChange} type="password" placeholder='Password' required />
                 </div>
 

@@ -3,6 +3,8 @@ import { useState, useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import AuthContext from '../../context/login/authContext'
 import styles from "./loginForm.module.css"
+import lock from "../../assets/lock_img.png"
+import email from "../../assets/email_img.png"
 
 function LoginForm() {
 
@@ -61,12 +63,12 @@ function LoginForm() {
       <form >
 
         <div className={styles.input}>
-          <img alt="message_img" />
+          <img src={email} alt="message_img" />
           <input name="email" value={data.email} onChange={handleChange} type="email" placeholder='Email' required />
         </div>
 
         <div className={styles.input}>
-          <img alt="lock_img" />
+          <img src={lock} alt="lock_img" />
           <input name="password" value={data.password} onChange={handleChange} type="password" placeholder='Password' required />
         </div>
 

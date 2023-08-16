@@ -16,6 +16,7 @@ function AddBlog() {
 
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -43,14 +44,18 @@ function AddBlog() {
                     userId,
                     token
                 }
+                setIsLoading(true)
                 axios.post("http://3.111.7.227/api/v1/posts", blog)
-                    .then(res => console.log(res.data))
+                    .then(res => {
+                        console.log(res.data)
+                        alert("POST SUBMITTED SUCCESSFULLY")
+                        navigate("/blogs")
+                    })
                     .catch(err => console.log(err));
-
+                setIsLoading(false)
                 setTitle("");
                 setContent("");
-                alert("POST SUBMITTED SUCCESSFULLY")
-            } else{
+            } else {
                 alert("Title must be at least 3 characters long")
             }
 
@@ -76,7 +81,8 @@ function AddBlog() {
                 <label htmlFor="content">Content</label>
                 <textarea id="content" name="content" onChange={handleChange} placeholder="Write something.." style={{ height: "200px" }}></textarea> <br /> <br />
 
-                <input onClick={handleSubmit} type="submit" value="Submit" />
+                <input onClick={handleSubmit} disabled={isLoading} type="submit" value={isLoading ? "Loading..." : "Submit"} >
+                </input>
             </form>
 
 
