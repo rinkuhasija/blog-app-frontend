@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import styles from './navbar.module.css'
 import { useNavigate } from 'react-router'
 // import profile_img from '../../assets/profile_img.png'
@@ -16,6 +16,16 @@ function Navbar() {
         navigate("/login")
     }
 
+    useEffect(() => {
+        //check if user is logged in with localStorage state variable
+        const loggedIn = window.localStorage.getItem("isLoggedIn");
+        if (loggedIn === "true") {
+            setIsLoggedIn(true);
+        } else {
+            setIsLoggedIn(false);
+        }
+    }, [])
+
     return (
         <div className={styles.navbarContainer}>
 
@@ -24,10 +34,10 @@ function Navbar() {
             </div>
 
             {isLoggedIn ? <div className={styles.logoutSuccess}>
-            <button className={styles.logoutBtn} onClick={handleLogout}><span> Log out </span> </button>
+                <button className={styles.logoutBtn} onClick={handleLogout}><span> Log out </span> </button>
             </div> : <div className={styles.logout}>
-                <button className={styles.login} onClick={()=>navigate("/login")}><span> Log in </span> </button>
-                <button className={styles.signup} onClick={()=>navigate("/register")}><span>  Sign up </span></button>
+                <button className={styles.login} onClick={() => navigate("/login")}><span> Log in </span> </button>
+                <button className={styles.signup} onClick={() => navigate("/register")}><span>  Sign up </span></button>
             </div>}
         </div>
     )

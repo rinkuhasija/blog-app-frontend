@@ -38,6 +38,8 @@ function SingleBlogPost() {
 
             </div>
 
+            
+
         </div>
     )
 }

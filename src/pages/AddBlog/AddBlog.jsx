@@ -49,7 +49,7 @@ function AddBlog() {
                     .then(res => {
                         console.log(res.data)
                         alert("POST SUBMITTED SUCCESSFULLY")
-                        navigate("/blogs")
+                        navigate("/")
                     })
                     .catch(err => console.log(err));
                 setIsLoading(false)
