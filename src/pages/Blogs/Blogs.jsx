@@ -29,7 +29,8 @@ function Blogs() {
 
             <div className={styles.topTextContainer}>
                 <h1> All Blog Posts</h1> <br />
-                <button onClick={() => navigate("/add-blog")}> Add a Blog Post</button>
+                <button onClick={() => navigate("/add-blog")}> Add a Blog Post 
+                </button>
             </div>
 
 
